@@ -1,0 +1,63 @@
+/* src/App.css */
+
+/* Resetting some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Basic styling for the entire app */
+  .App {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Styling for the header section */
+  .App-header {
+    background-color: #3498db;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+  }
+  
+  /* Styling for the medical center title */
+  h1 {
+    font-size: 2em;
+  }
+  
+  /* Styling for the welcome message */
+  p {
+    font-size: 1.2em;
+    
+  }
+  
+  /* Styling for the chatbot icon popup */
+  .ChatPopup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Styling to show the chatbot icon popup */
+  .ChatPopup.show {
+    display: block;
+  }
+  
+  /* Styling for the chatbot icon */
+  .ChatIcon {
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  /* Styling for the chatbot icon image */
+  .ChatIcon img {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px;
+  }
+  
