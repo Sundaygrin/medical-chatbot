@@ -1,15 +1,21 @@
 /* src/App.css */
 
-/* Resetting some default styles */
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-  }
-  
+.slider-image-container {
+  width: 100%; /* Ensures images take full width of slider */
+  height: auto;
+ /* Ensures aspect ratio is maintained */
+}
+
+.slider-image {
+  width: 100%; /* Ensures images take full width of their container */
+  height: auto; /* Ensures aspect ratio is maintained */
+}
   /* Basic styling for the entire app */
   .App {
     text-align: center;
     font-family: 'Arial', sans-serif;
+    background-color: black;
+
   }
   
   /* Styling for the header section */
@@ -56,8 +62,11 @@ body, h1, h2, p {
   }
   
   /* Styling for the chatbot icon image */
-  .ChatIcon img {
-    width: 50px; /* Adjust the size as needed */
-    height: 50px;
+  .ChatIcon  {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px;
+    border: solid 2pt red;
   }
+  
+
   

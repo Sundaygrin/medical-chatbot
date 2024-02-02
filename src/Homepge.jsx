@@ -1,13 +1,15 @@
-// App.js
 
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './App.css'; // Import the CSS file
+import './App.css'; 
 import picture1 from '../src/pictures/picture1.jpeg';
-
 import picture3 from '../src/pictures/picture3.jpeg';
+import TopNav from './topNav';
+import Popup from './popup';
+import './css/Homepge.css'
+
 
 
 function App() {
@@ -28,28 +30,26 @@ function App() {
   };
 
   return (
-    <div>
+    <div style={{ width: '100%',overflowX: 'hidden' }}>
       <div className="App">
-        <header className="App-header">
-          <h1>Medical AI Chat</h1>
-          
-        </header>
-        
+      <TopNav/>
+
       </div>
 
-      <Slider {...sliderSettings}>
+      <Slider {...sliderSettings} style={{ width: '100%'}}>
         {images.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`Slide ${index + 1}`} />
+          <div key={index}  className="slider-image-container">
+            <img src={image} className="slider-image" alt={`Slide ${index + 1}`} />
           </div>
         ))}
       </Slider>
-
+          <Popup/>
       <div className={`ChatPopup ${showChatPopup ? 'show' : ''}`}>
         <div className="ChatIcon" onClick={toggleChatPopup}>
           <img src="path/to/chat-icon.png" alt="Chat Icon" />
         </div>
       </div>
+    
     </div>
   );
 }

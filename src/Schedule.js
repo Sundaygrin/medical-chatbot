@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './css/schedule.css';
+import TopNav from './topNav';
+import Popup from './popup';
 
 const AppointmentScheduler = () => {
   const [appointment, setAppointment] = useState({
@@ -27,7 +29,6 @@ const AppointmentScheduler = () => {
   };
 
   const handleClick = () => {
-    // Logic to handle the scheduled appointment (e.g., send data to server, etc.)
     handleFormSubmit({
       preventDefault: () => {}
     });
@@ -35,8 +36,11 @@ const AppointmentScheduler = () => {
 
   return (
     <div>
+       <TopNav/>
+    <div className="scheduler-container">
+  
       <h1>Schedule an Appointment</h1>
-      <form onSubmit={handleFormSubmit}>
+      <form className="scheduler-form" onSubmit={handleFormSubmit}>
         <label>
           Date:
           <input
@@ -47,7 +51,6 @@ const AppointmentScheduler = () => {
             required
           />
         </label>
-        <br />
         <label>
           Time:
           <input
@@ -58,7 +61,6 @@ const AppointmentScheduler = () => {
             required
           />
         </label>
-        <br />
         <label>
           Purpose:
           <input
@@ -69,11 +71,12 @@ const AppointmentScheduler = () => {
             required
           />
         </label>
-        <br />
         <button type="button" onClick={handleClick}>
           Schedule Appointment
         </button>
       </form>
+    </div>
+    <Popup/>
     </div>
   );
 };

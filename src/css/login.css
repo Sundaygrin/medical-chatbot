@@ -1,0 +1,192 @@
+/* 
+:root{
+    --bg-color:#160225;
+} */
+
+.logMin{
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+}
+
+
+.logform{
+
+    border-radius: 8px;
+    height: 380px;
+    width: 300px;
+    display: grid;
+    margin-left: 38%;
+    margin-top: 10%;
+    background-color: rgba(255, 255, 255, 0.541);
+    padding: 1rem;
+
+}
+
+.logbime{
+    margin-left: 34%;
+}
+
+.logform input{
+    margin-top: 5%;
+    border: solid 2pt white;
+    background-color: transparent;
+    border-radius: 8px;
+    height: 40px;
+    outline: none;
+    padding: 1%;
+    text-align: center;
+    color: white;
+    
+}
+
+placeholder-shown{
+    color: white;
+    margin-left: 5%;
+}
+
+.logbutton{
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    color: white;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    margin-top: 5%;
+    border: none;
+}
+
+.logbutton :hover{
+    transform: scale(1.1);
+}
+
+.logredir{
+    margin-left: 9%;
+}
+
+
+
+
+
+
+@media only screen and (max-width:500px ){
+    .logform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 300px;
+        display: grid;
+        margin-left: 4%;
+        margin-top: 10%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }
+    
+    
+}
+
+
+@media only screen and (max-width:414px) {
+    .logform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-left: 3.5rem;
+        margin-top: 35%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width:320px) {
+
+
+    .logMain{
+   
+        height: 100vh;
+        overflow: hidden;
+        justify-content: center;
+        
+    }
+    .logform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-top: 15%;
+        background-color: rgba(255, 255, 255, 0.541);
+      
+    
+    }
+}
+
+
+@media only screen and (max-width:390px) {
+    .logform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-left: 15%;
+        margin-top: 45%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }
+}
+
+
+
+@media only screen and (max-width:360px) {
+    .logform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-left: 4%;
+        margin-top: 35%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }
+}
+
+
+@media only screen and (max-width:384px) {
+    .logform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-left: 2.5rem;
+        margin-top: 35%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }
+}
+
+
+
+
+
+
+
+
+
+

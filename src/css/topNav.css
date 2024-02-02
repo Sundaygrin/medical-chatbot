@@ -1,0 +1,48 @@
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #49d5e7;
+    padding: 20px 20px;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    margin-left: 42rem;
+  }
+  
+  .nav-link {
+    margin-right: 40px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: larger;
+  }
+  
+  .medik-bot-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .profile-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+  }
+  
+
+  button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+  }
