@@ -44,11 +44,7 @@ function App() {
         ))}
       </Slider>
           <Popup/>
-      <div className={`ChatPopup ${showChatPopup ? 'show' : ''}`}>
-        <div className="ChatIcon" onClick={toggleChatPopup}>
-          <img src="path/to/chat-icon.png" alt="Chat Icon" />
-        </div>
-      </div>
+    
     
     </div>
   );
