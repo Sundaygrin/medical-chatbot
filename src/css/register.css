@@ -1,0 +1,182 @@
+/* 
+:root{
+    --bg-color:#160225;
+} */
+
+.regMain{
+   
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+}
+
+
+.regform{
+
+    border-radius: 8px;
+    height: 380px;
+    width: 300px;
+    display: grid;
+    margin-left: 38%;
+    margin-top: 10%;
+    background-color: rgba(255, 255, 255, 0.541);
+    padding: 1rem;
+
+}
+
+.regbime{
+    margin-left: 34%;
+}
+
+.regform input{
+    margin-top: 5%;
+    border: solid 2pt white;
+    background-color: transparent;
+    border-radius: 8px;
+    height: 40px;
+    outline: none;
+    color: white;
+    font-size: small;
+    text-align: center;
+    
+}
+
+input :placeholder-shown{
+    color: white;
+    margin-left: 5%;
+}
+
+.signupbutton{
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    color: white;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    margin-top: 5%;
+    border: none;
+}
+
+button :hover{
+    transform: scale(1.1);
+}
+
+.regredir{
+    margin-left: 9%;
+    margin-top: 1%;
+}
+
+
+
+
+@media only screen and (max-width:500px ){
+    .regform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 300px;
+        display: grid;
+        margin-left: 4%;
+        margin-top: 10%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }  
+}
+
+
+
+@media only screen and (max-width:414px) {
+    .regform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-left: 3.5rem;
+        margin-top: 35%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width:320px) {
+
+
+    .regMain{
+   
+        height: 100vh;
+        overflow: hidden;
+        justify-content: center;
+        
+    }
+    .regform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-top: 15%;
+        background-color: rgba(255, 255, 255, 0.541);
+      
+    
+    }
+}
+
+
+@media only screen and (max-width:390px) {
+    .regform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-left: 15%;
+        margin-top: 45%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }
+}
+
+
+
+@media only screen and (max-width:360px) {
+    .regform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-left: 4%;
+        margin-top: 35%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }
+}
+
+
+@media only screen and (max-width:384px) {
+    .regform{
+
+        border-radius: 8px;
+        height: 380px;
+        width: 250px;
+        display: grid;
+        margin-left: 2.5rem;
+        margin-top: 35%;
+        background-color: rgba(255, 255, 255, 0.541);
+        padding: 1rem;
+    
+    }
+}
+

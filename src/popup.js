@@ -31,7 +31,6 @@ const Popup = () => {
 
         const result = await response.json();
 
-        // Extract text from bot response and display
         if (result.text) {
           setChatMessages([...chatMessages, { sender: 'Chatbot', message: result.text }]);
         } else {
@@ -48,7 +47,7 @@ const Popup = () => {
 
   return (
     <div>
-      <button onClick={openPopup}>Open Chat</button>
+      <button  className= "bot-main-Button"onClick={openPopup}>Open Chat</button>
       {isPopupOpen && (
         <div className="popup">
           <div className="popup-content">
@@ -70,7 +69,7 @@ const Popup = () => {
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder="Type a message..."
               />
-              <button onClick={handleSend}>Send</button>
+              <button onClick={handleSend} className="send">Send</button>
             </div>
           </div>
         </div>
