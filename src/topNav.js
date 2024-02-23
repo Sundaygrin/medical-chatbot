@@ -1,29 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './css/topNav.css';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function TopNav() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const goToHome = () =>{
-        navigate('/homepage');  
-    }
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    const goToSchedule =()=>{
-        navigate('/schedule')
-    }
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
-    const goToReminder = () =>{
-        navigate('/reminder')
-    }
+  const goToHome = () => {
+    navigate('/homepage');
+    closeMenu();
+  };
+
+  const goToSchedule = () => {
+    navigate('/schedule');
+    closeMenu();
+  };
+
+  const goToReminder = () => {
+    navigate('/reminder');
+    closeMenu();
+  };
 
   return (
     <div className="top-nav">
       <div className="logo">Medik</div>
-      <div className="nav-links">
-        <button className="nav-link" onClick={goToHome}>Home</button>
-        <button className="nav-link" onClick={goToSchedule}>Appointment</button>
-        <button className="nav-link" onClick={goToReminder}>Reminder</button>
+      <button className="menu-icon" onClick={toggleMenu}>
+        ☰
+      </button>
+      <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+        <button className="nav-link" onClick={goToHome}>
+          Home
+        </button>
+        <button className="nav-link" onClick={goToSchedule}>
+          Appointment
+        </button>
+        <button className="nav-link" onClick={goToReminder}>
+          Reminder
+        </button>
       </div>
       <button className="medik-bot-btn">Medik Bot</button>
       <div className="profile-circle"></div>

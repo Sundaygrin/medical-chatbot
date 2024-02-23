@@ -1,72 +1,91 @@
-/* src/App.css */
-
 .slider-image-container {
-  width: 100%; /* Ensures images take full width of slider */
+  width: 100%;
   height: auto;
- /* Ensures aspect ratio is maintained */
 }
 
 .slider-image {
-  width: 100%; /* Ensures images take full width of their container */
-  height: auto; /* Ensures aspect ratio is maintained */
+  width: 100%;
+  height: auto;
 }
-  /* Basic styling for the entire app */
-  .App {
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    background-color: black;
 
-  }
-  
-  /* Styling for the header section */
+.bot-main-Button{
+  color: #ccc;
+  font-weight: 500;
+  font-size: larger;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: black;
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.App-header {
+  background-color: #3498db;
+  flex-direction: column;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.ChatPopup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ChatPopup.show {
+  display: block;
+}
+
+.ChatIcon {
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Adjust the size of the chatbot icon image for responsiveness */
+.ChatIcon img {
+  width: 100px;
+  height: 100px;
+  border: solid 2pt red;
+}
+
+/* Media query for responsiveness */
+@media only screen and (max-width: 768px) {
   .App-header {
-    background-color: #3498db;
-    flex-direction: column;
-    color: white;
-    padding: 20px;
+    padding: 10px; /* Adjust header padding for smaller screens */
   }
-  
-  /* Styling for the medical center title */
-  h1 {
-    font-size: 2em;
-  }
-  
-  /* Styling for the welcome message */
-  p {
-    font-size: 1.2em;
-    
-  }
-  
-  /* Styling for the chatbot icon popup */
-  .ChatPopup {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  /* Styling to show the chatbot icon popup */
-  .ChatPopup.show {
-    display: block;
-  }
-  
-  /* Styling for the chatbot icon */
-  .ChatIcon {
-    cursor: pointer;
-    padding: 10px;
-  }
-  
-  /* Styling for the chatbot icon image */
-  .ChatIcon  {
-    width: 100px; /* Adjust the size as needed */
-    height: 100px;
-    border: solid 2pt red;
-  }
-  
 
-  
+  h1 {
+    font-size: 1.5em; /* Decrease title font size for smaller screens */
+  }
+
+  p {
+    font-size: 1em; /* Decrease paragraph font size for smaller screens */
+  }
+
+  .ChatPopup {
+    bottom: 10px; /* Adjust chat popup position for smaller screens */
+    left: 10px;
+  }
+
+  .bot-main-Button{
+    width: 85%;
+    color: #ccc;
+  }
+}

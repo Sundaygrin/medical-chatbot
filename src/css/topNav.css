@@ -1,48 +1,81 @@
 .top-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #49d5e7;
-    padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #49d5e7;
+  padding: 20px 20px;
+  position: relative;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none; /* Initially hide the nav links */
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background-color: #49d5e7;
+  width: 40%;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.nav-links.open {
+  display: flex; /* Display nav links when open */
+}
+
+.nav-link {
+  margin-right: 100px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  text-align: left;
+  color: #ffffff;
+  font-weight: normal;
+  font-size: larger;
+}
+
+.medik-bot-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 769px) {
+  .menu-icon {
+    display: none;
   }
-  
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
+
   .nav-links {
     display: flex;
-    margin-left: 42rem;
-  }
-  
-  .nav-link {
-    margin-right: 40px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: normal;
-    font-size: larger;
-  }
-  
-  .medik-bot-btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .profile-circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ccc;
-  }
-  
-
-  button{
-    outline: none;
-    border: none;
+    flex-direction: row;
+    position: static;
     background-color: transparent;
+    width: auto;
   }
+}

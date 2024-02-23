@@ -10,7 +10,7 @@ import { useNavigate} from 'react-router-dom';
 
 export const Registration = () => {
     const navigate = useNavigate();
-  const bgColor = localStorage.getItem("color");
+  
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -85,7 +85,7 @@ export const Registration = () => {
     if (username !== "" && email !== "" && password !== "") {
       
 
-        if (username == "" || email == "" || password == "") {
+        if (username === "" || email === "" || password === "") {
           notifyError("Register failed try login.");
         } else {
           notifySuccess("Registration Successful.");
