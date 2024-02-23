@@ -108,7 +108,7 @@ export const Login = () => {
         </button>
         <ToastContainer />
         <p className="logredir">
-          Don't have an account?<a href="/signUp">sign up</a>
+          Don't have an account?<a href="/">sign up</a>
         </p>
       </form>
     </div>
