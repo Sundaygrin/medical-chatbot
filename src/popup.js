@@ -16,8 +16,13 @@ const Popup = () => {
 
   const handleSend = async () => {
     if (userInput.trim() !== '') {
-      setChatMessages([...chatMessages, { sender: 'User', message: userInput }]);
-
+      const newMessage = { sender: 'User', message: userInput };
+      setChatMessages([...chatMessages, newMessage]);
+  
+      // Save to localStorage
+      const updatedChatMessages = [...chatMessages, newMessage];
+      localStorage.setItem('chatMessages', JSON.stringify(updatedChatMessages));
+  
       try {
         const response = await fetch('https://chatgpt-api8.p.rapidapi.com/', {
           method: 'POST',
@@ -28,23 +33,30 @@ const Popup = () => {
           },
           body: JSON.stringify([{ content: userInput, role: 'user' }])
         });
-
+  
         const result = await response.json();
-
+  
         if (result.text) {
-          setChatMessages([...chatMessages, { sender: 'Chatbot', message: result.text }]);
+          const botMessage = { sender: 'Chatbot', message: result.text };
+          setChatMessages([...updatedChatMessages, botMessage]);
+          // Save to localStorage
+          localStorage.setItem('chatMessages', JSON.stringify([...updatedChatMessages, botMessage]));
         } else {
-          setChatMessages([...chatMessages, { sender: 'Chatbot', message: 'Error: Invalid bot response.' }]);
+          setChatMessages([...updatedChatMessages, { sender: 'Chatbot', message: 'Error: Invalid bot response.' }]);
+          // Save to localStorage
+          localStorage.setItem('chatMessages', JSON.stringify([...updatedChatMessages, { sender: 'Chatbot', message: 'Error: Invalid bot response.' }]));
         }
       } catch (error) {
         console.error('Error fetching data:', error);
-        setChatMessages([...chatMessages, { sender: 'AI', message: 'Error fetching data. Please try again later.' }]);
+        setChatMessages([...updatedChatMessages, { sender: 'AI', message: 'Error fetching data. Please try again later.' }]);
+        // Save to localStorage
+        localStorage.setItem('chatMessages', JSON.stringify([...updatedChatMessages, { sender: 'AI', message: 'Error fetching data. Please try again later.' }]));
       }
-
+  
       setUserInput('');
     }
   };
-
+  
   return (
     <div>
       <button  className= "bot-main-Button"onClick={openPopup}>Open Chat</button>

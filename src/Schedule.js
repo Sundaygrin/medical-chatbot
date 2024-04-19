@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/schedule.css';
 import TopNav from './topNav';
 import Popup from './popup';
@@ -9,6 +9,20 @@ const AppointmentScheduler = () => {
     time: '',
     purpose: ''
   });
+  const [savedAppointments, setSavedAppointments] = useState([]);
+
+  // Load saved appointments from local storage on component mount
+  useEffect(() => {
+    const savedAppointmentsData = localStorage.getItem('savedAppointments');
+    if (savedAppointmentsData) {
+      setSavedAppointments(JSON.parse(savedAppointmentsData));
+    }
+  }, []);
+
+  // Save appointments to local storage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('savedAppointments', JSON.stringify(savedAppointments));
+  }, [savedAppointments]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,18 +34,15 @@ const AppointmentScheduler = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log('Appointment Scheduled:', appointment);
-    setAppointment({
-      date: '',
-      time: '',
-      purpose: ''
-    });
-  };
-
-  const handleClick = () => {
-    handleFormSubmit({
-      preventDefault: () => {}
-    });
+    if (appointment.date && appointment.time && appointment.purpose) {
+      const newAppointment = `${appointment.date} at ${appointment.time}: ${appointment.purpose}`;
+      setSavedAppointments([...savedAppointments, newAppointment]);
+      setAppointment({
+        date: '',
+        time: '',
+        purpose: ''
+      });
+    }
   };
 
   return (
@@ -71,10 +82,18 @@ const AppointmentScheduler = () => {
             required
           />
         </label>
-        <button type="button" onClick={handleClick}>
+        <button type="submit">
           Schedule Appointment
         </button>
       </form>
+    </div>
+    <div>
+      <h3>Saved Appointments</h3>
+      <ul>
+        {savedAppointments.map((appointment, index) => (
+          <li key={index}>{appointment}</li>
+        ))}
+      </ul>
     </div>
     <Popup/>
     </div>
